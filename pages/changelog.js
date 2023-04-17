@@ -32,8 +32,33 @@ document.addEventListener("DOMContentLoaded", function () {
         listItem.textContent = note;
         releaseNotes.appendChild(listItem);
       });
-  
       releaseSection.appendChild(releaseNotes);
+  
+      // Fetch the list of changed files
+      fetch(release.tarball_url)
+        .then((response) => response.blob())
+        .then((blob) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const fileList = document.createElement("ul");
+            const files = reader.result
+              .split("\n")
+              .filter((line) => line.startsWith("diff --git"));
+  
+            files.forEach((fileLine) => {
+              const fileParts = fileLine.split(" ");
+              const filePath = fileParts[2].slice(2);
+              const listItem = document.createElement("li");
+              listItem.textContent = `Changed: ${filePath}`;
+              fileList.appendChild(listItem);
+            });
+  
+            releaseSection.appendChild(fileList);
+          };
+          reader.readAsText(blob);
+        })
+        .catch((error) => console.error("Error fetching changed files:", error));
+  
       changelogContainer.appendChild(releaseSection);
     });
   }
