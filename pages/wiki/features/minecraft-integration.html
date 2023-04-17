@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/pages/css/mine.css">
+  <title>Wadder - Minecraft Integration</title>
+</head>
+<body>
+  <header>
+    <a href="/index.html"><h1 id="logo">Wadder</h1></a>
+  </header>
+
+  <main>
+    <h2>Minecraft Integration</h2>
+    <p>With Wadder, you can integrate your Minecraft server to your Discord server and keep track of the players online. Here's how to set it up:</p>
+    
+    <h3>Step 1: Add the Wadder bot to your Discord server</h3>
+    <p>If you haven't already, invite the Wadder bot to your Discord server by clicking on the link below:</p>
+    <p><a href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot&permissions=YOUR_PERMISSIONS" class="invite-button">
+        Invite Wadder to your server
+      </a></p>
+    
+    <h3>Step 2: Set up the server information</h3>
+    <p>Once the bot is added to your Discord server, you need to set up the server information. Here's how:</p>
+    <ol>
+      <li>Open your Minecraft server console and find the IP address and port number of your server.</li>
+      <li>Open your Discord server and type the following command in any text channel: <code>/setup_server [ip address] [port number] [channel] [server name] [server description]</code></li>
+      <li>Replace the placeholders with your own information. For example: <code>/setup_server 127.0.0.1 25565 #minecraft-server "My Minecraft Server" "A cool Minecraft server"</code></li>
+      <li>The server information will be displayed in the specified channel and refreshed every 5 minutes.</li>
+    </ol>
+    
+    <h3>Step 3: Watch the server information</h3>
+    <p>You can now watch the server information in the specified Discord channel. The bot will refresh the information every 5 minutes.</p>
+    
+    <p>Note: Wadder does not keep or take any information from your server.</p>
+  </main>
+
+  <footer>
+    <p>© Wadder Projects</p>
+    <div class="social-icons">
+      <a href="https://discord.gg/yourinvitecode"><img src="/images/discord.svg" alt="Discord"></a>
+      <a href="mailto:youremail@gmail.com"><img src="/images/gmail.svg" alt="Gmail"></a>
+      <a href="https://twitter.com/yourusername"><img src="/images/twitter.svg" alt="Twitter"></a>
+    </div>
+  </footer>
+</body>
+</html>
+
