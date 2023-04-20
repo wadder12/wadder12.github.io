@@ -66,3 +66,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, 1000);
   });
+
+
+
+  async function updateBotStatus() {
+    try {
+      const response = await fetch("http://104.223.99.182:27030/api/bot-status");
+      if (response.ok) {
+        const statusData = await response.json();
+        document.getElementById("status-text").innerText = `Status: ${statusData.status}`;
+      } else {
+        document.getElementById("status-text").innerText = "Error fetching status";
+      }
+    } catch (error) {
+      document.getElementById("status-text").innerText = "Error fetching status";
+    }
+  }
+  
+  // Call the function when the page loads
+  updateBotStatus();

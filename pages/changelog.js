@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   function fetchChangelog() {
     const repoOwner = "wadder12";
-    const repoName = "wadder12.github.io";
+    const repoName = "Wadder-V5--DEV-";
     const apiURL = `https://api.github.com/repos/${repoOwner}/${repoName}/releases`;
   
     fetch(apiURL)
